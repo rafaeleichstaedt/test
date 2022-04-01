@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container grey lighten-3 fluid>
     <v-row align="center" justify="center">
       <v-form v-model="valid">
         <v-container>
@@ -35,10 +35,11 @@
               md="3"
             >
               <v-text-field
-                v-model="email"
-                :rules="emailRules"
-                label="E-mail"
+                v-model="participation"
+                :rules="participationRules"
+                label="Participation"
                 required
+                type="number"
               ></v-text-field>
             </v-col>
             <v-col
@@ -49,7 +50,7 @@
               <div class="text-center">
                 <v-btn
                   rounded
-                  color="primary"
+                  color="grey"
                   dark
                 >
                   Send
@@ -73,12 +74,12 @@
       lastname: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
+        v => v.length <= 15 || 'Name must be less than 15 characters',
       ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
+      participation: '',
+      participationRules: [
+        v => !!v || 'Participation is required',
+        v => /.+@.+/.test(v) || 'Participation must be valid',
       ],
     }),
   }

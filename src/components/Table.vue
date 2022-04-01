@@ -16,7 +16,7 @@
           <td>{{ item.id }}</td>
           <td>{{ item.firstName }}</td>
           <td>{{ item.lastName }}</td>
-          <td>{{ formatPercent(item.participation) }}</td>
+          <td class="text-center">{{ formatPercent(item.participation) }}</td>
         </tr>
       </tbody>
     </template>
