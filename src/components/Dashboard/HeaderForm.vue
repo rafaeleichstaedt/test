@@ -36,10 +36,10 @@
             >
               <v-text-field
                 v-model="participation"
+                v-mask="'##.##'"
                 :rules="participationRules"
                 label="Participation"
                 required
-                type="number"
               ></v-text-field>
             </v-col>
             <v-col
@@ -79,7 +79,6 @@
       participation: '',
       participationRules: [
         v => !!v || 'Participation is required',
-        v => /.+@.+/.test(v) || 'Participation must be valid',
       ],
     }),
   }
